@@ -1,4 +1,11 @@
 package com.edutech.progressive.exception;
 
-public class AccountNotFoundException {
+public class AccountNotFoundException extends RuntimeException {
+    public AccountNotFoundException(String message) {
+        super(message);
+    }
+
+    public AccountNotFoundException() {
+    }
+    
 }

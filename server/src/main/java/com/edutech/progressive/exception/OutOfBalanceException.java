@@ -1,4 +1,11 @@
 package com.edutech.progressive.exception;
 
-public class OutOfBalanceException {
+public class OutOfBalanceException extends RuntimeException {
+    public OutOfBalanceException(String message) {
+        super(message);
+    }
+
+    public OutOfBalanceException() {
+    }
+    
 }
