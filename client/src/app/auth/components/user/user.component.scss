@@ -1,0 +1,242 @@
+/* =========================
+   GLOBAL PAGE STYLE
+   ========================= */
+
+:host {
+  display: block;
+  min-height: 100svh;
+  padding: 30px 0;
+
+  /* clean professional background */
+  background: #f4f6f9;
+
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #2c3e50;
+}
+
+/* =========================
+   GRID SYSTEM (UNCHANGED)
+   ========================= */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+.col-1  { width: 8.33%; }
+.col-2  { width: 16.67%; }
+.col-3  { width: 25%; }
+.col-4  { width: 33.33%; }
+.col-5  { width: 41.67%; }
+.col-6  { width: 50%; }
+.col-7  { width: 58.33%; }
+.col-8  { width: 66.67%; }
+.col-9  { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.67%; }
+.col-12 { width: 100%; }
+
+/* =========================
+   CARD (MINIMAL PREMIUM)
+   ========================= */
+
+.card {
+  background: #ffffff;
+
+  border-radius: 10px;
+  border: 1px solid #e3e7ee;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.06);
+
+  margin: 12px 0;
+
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.10);
+}
+
+.card-body {
+  padding: 18px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
+   FORM (ENTERPRISE STYLE)
+   ========================= */
+
+.user-form {
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 24px;
+
+  background: #ffffff;
+  border-radius: 12px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.08);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 11px;
+  font-size: 14px;
+
+  border-radius: 8px;
+  border: 1px solid #d1d9e6;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  transition: all 0.2s ease;
+}
+
+/* Input focus */
+input:focus,
+select:focus {
+  border-color: #2563eb;
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* Placeholder */
+input::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================
+   BUTTON (PROFESSIONAL)
+   ========================= */
+
+button.btn-submit {
+  width: 100%;
+  padding: 12px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;   /* clean enterprise blue */
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+button.btn-submit:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+button.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   LINK
+   ========================= */
+
+a.task-list {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a.task-list:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ALERTS
+   ========================= */
+
+.error {
+  color: #dc2626;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.success {
+  color: #16a34a;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+    padding: 6px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

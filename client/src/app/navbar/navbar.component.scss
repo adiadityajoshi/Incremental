@@ -1,0 +1,161 @@
+/* ================================
+   Navbar — Realistic Dark UI (No Blue)
+   ================================ */
+
+:host {
+  display: block;
+  position: relative;
+  z-index: 999;
+}
+
+/* =========================
+   NAVBAR CONTAINER
+   ========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 24px;
+  margin: 0;
+
+  /* Match login dark surface */
+  background: #0f1113;
+
+  border-bottom: 1px solid #23272f;
+
+  /* realistic depth */
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+
+  position: sticky;
+  top: 0;
+}
+
+/* subtle top light line */
+.navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+}
+
+/* =========================
+   NAV LIST
+   ========================= */
+
+.navbar-list {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   NAV LINKS (REAL STYLE)
+   ========================= */
+
+.nav-link {
+  position: relative;
+
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #d4d4d8;
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition: all 0.18s ease;
+}
+
+/* hover (subtle, no gradient) */
+.nav-link:hover {
+  color: #ffffff;
+  background: #1a1d21;
+
+  transform: translateY(-1px);
+}
+
+/* active (warm accent) */
+.nav-link.active {
+  color: #fff;
+
+  background: #d97706;
+
+  box-shadow:
+    0 4px 10px rgba(217,119,6,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* =========================
+   APP TITLE
+   ========================= */
+
+.app-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f4f4f5;
+  letter-spacing: 0.3px;
+}
+
+/* subtle underline (no neon) */
+.app-name::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 40%;
+  margin-top: 4px;
+
+  background: linear-gradient(
+    to right,
+    #f59e0b,
+    transparent
+  );
+}
+
+/* =========================
+   LOGOUT ALIGNMENT
+   ========================= */
+
+app-logout {
+  margin-left: auto;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  app-logout {
+    align-self: flex-end;
+  }
+}
