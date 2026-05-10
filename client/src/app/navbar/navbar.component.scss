@@ -1,161 +1,139 @@
 /* ================================
-   Navbar — Realistic Dark UI (No Blue)
+   Navbar — Premium Dark UI (Top-aligned)
    ================================ */
 
+/* Keep navbar at the very top and above content */
 :host {
   display: block;
   position: relative;
-  z-index: 999;
+  z-index: 1000; /* ensure it sits above page content */
 }
 
-/* =========================
-   NAVBAR CONTAINER
-   ========================= */
-
+/* Navbar container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 24px;
+  /* keep your padding, no margins */
+  padding: 10px 20px;
   margin: 0;
 
-  /* Match login dark surface */
-  background: #0f1113;
+  /* Premium dark background (matches login/user) */
+  background:
+    linear-gradient(180deg, rgba(18, 39, 66, 0.92), rgba(18, 39, 66, 0.88));
+  color: #e8eef6;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
 
-  border-bottom: 1px solid #23272f;
-
-  /* realistic depth */
+  /* depth */
   box-shadow:
-    0 10px 30px rgba(0,0,0,0.6),
-    inset 0 1px 0 rgba(255,255,255,0.04);
+    0 10px 24px rgba(0,0,0,0.35),
+    0 1px 0 rgba(255,255,255,0.05) inset;
 
+  /* keep it at the top when scrolling */
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
+
+  /* optional blur for premium feel */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* no extra spacing */
+  overflow: hidden;
 }
 
-/* subtle top light line */
-.navbar::after {
+/* Sheen overlay to match cards/forms */
+.navbar::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 10%;
-  width: 80%;
-  height: 1px;
-
+  inset: 0;
   background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255,255,255,0.25),
-    transparent
+    135deg,
+    rgba(96,170,255,0.10),
+    transparent 40%,
+    transparent 60%,
+    rgba(96,170,255,0.08)
   );
+  pointer-events: none;
 }
 
-/* =========================
-   NAV LIST
-   ========================= */
-
+/* Navbar list */
 .navbar-list {
-  display: flex;
-  gap: 22px;
   list-style: none;
-  margin: 0;
+  display: flex;
+  gap: 20px;   /* unchanged */
   padding: 0;
+  margin: 0;
 }
 
-/* =========================
-   NAV LINKS (REAL STYLE)
-   ========================= */
-
+/* Links */
 .nav-link {
-  position: relative;
-
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: 500;
-
-  color: #d4d4d8;
   text-decoration: none;
+  color: #dfe8ff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 
-  border-radius: 6px;
-
-  transition: all 0.18s ease;
+  border: 1px solid transparent;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.18s ease, transform 0.12s ease;
 }
 
-/* hover (subtle, no gradient) */
 .nav-link:hover {
+  background: linear-gradient(135deg, #2b6edb 0%, #1e4d8f 100%);
   color: #ffffff;
-  background: #1a1d21;
-
+  box-shadow:
+    0 8px 18px rgba(43,110,219,0.35),
+    0 1px 0 rgba(255,255,255,0.10) inset;
   transform: translateY(-1px);
 }
 
-/* active (warm accent) */
 .nav-link.active {
-  color: #fff;
-
-  background: #d97706;
-
+  background: linear-gradient(135deg, #3b85ff 0%, #2461c2 100%);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.12);
   box-shadow:
-    0 4px 10px rgba(217,119,6,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.15);
+    0 10px 22px rgba(43,110,219,0.40),
+    0 1px 0 rgba(255,255,255,0.12) inset;
 }
 
-/* =========================
-   APP TITLE
-   ========================= */
-
+/* App name stays plain */
 .app-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #f4f4f5;
-  letter-spacing: 0.3px;
+  cursor: default;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.app-name:hover {
+  background: transparent;
+  color: #dfe8ff;
 }
 
-/* subtle underline (no neon) */
-.app-name::after {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 40%;
-  margin-top: 4px;
-
-  background: linear-gradient(
-    to right,
-    #f59e0b,
-    transparent
-  );
-}
-
-/* =========================
-   LOGOUT ALIGNMENT
-   ========================= */
-
+/* Keep logout to the right */
 app-logout {
   margin-left: auto;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-
+/* Responsive */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: stretch;
+    row-gap: 10px;
   }
 
   .navbar-list {
     flex-direction: column;
-    width: 100%;
+    gap: 10px;
   }
 
   .nav-link {
-    width: 100%;
+    padding: 10px 12px;
   }
 
   app-logout {
+    margin-left: 0;
     align-self: flex-end;
   }
 }

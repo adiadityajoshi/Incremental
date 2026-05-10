@@ -3,19 +3,7 @@
  * You can add your own extra polyfills to this file.
  *
  * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before lopublic List<Customers>
-getAllCustomersSortedByName() throws
-SQLException // Returns all customers sorted by
-name (currently returns an empty list).
-public void updateCustomer(Customers customers)
-throws SQLException // Updates an existing
-customer's details (currently does nothing).
-public void deleteCustomer(int customerld) throws
-SQLException // Deletes a customer by ID (currently
-does nothing).
-public Customers getCustomerByld(int customerld)
-throws SQLException // Returns a customer by ID
-(currently returns null).ng ZoneJS and are sorted by browsers.
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
  *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
  *      file.
  *
